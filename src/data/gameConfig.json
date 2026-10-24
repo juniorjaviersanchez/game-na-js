@@ -1,0 +1,56 @@
+{
+  "targetDistance": 1000,
+  "boxInterval": 100,
+  "laneWidth": 2.6,
+  "numLanes": 3,
+  "initialSpeed": 14.0,
+  "maxSpeed": 28.0,
+  "jumpVelocity": 12.0,
+  "gravity": 28.0,
+  "sparkValue": 1,
+  "correctQuestionScore": 100,
+  "wrongQuestionPenalty": 25,
+  "totalBoxes": 9,
+  "zones": [
+    {
+      "start": 0,
+      "end": 250,
+      "name": "La Profundidad de las Sombras",
+      "subtitle": "Ecos de cadenas y siluetas engañosas",
+      "fogColor": "#15151b",
+      "ambientLight": "#3a3a48",
+      "groundColor": "#22232a",
+      "questionLevel": "facil"
+    },
+    {
+      "start": 250,
+      "end": 500,
+      "name": "El Resplandor del Fuego",
+      "subtitle": "El artificio de los títeres revelado",
+      "fogColor": "#301d14",
+      "ambientLight": "#7a4625",
+      "groundColor": "#3f2d24",
+      "questionLevel": "facil"
+    },
+    {
+      "start": 500,
+      "end": 750,
+      "name": "El Umbral del Alba",
+      "subtitle": "La luz diurna penetra la grieta de la roca",
+      "fogColor": "#1f2d3d",
+      "ambientLight": "#4b79a1",
+      "groundColor": "#314459",
+      "questionLevel": "media"
+    },
+    {
+      "start": 750,
+      "end": 1000,
+      "name": "El Mundo de las Ideas",
+      "subtitle": "La radiación suprema de la Luz del Sol",
+      "fogColor": "#fff5db",
+      "ambientLight": "#fceabb",
+      "groundColor": "#d4af37",
+      "questionLevel": "dificil"
+    }
+  ]
+}

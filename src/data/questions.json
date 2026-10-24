@@ -1,0 +1,722 @@
+[
+  {
+    "id": 1,
+    "nivel": "facil",
+    "pregunta": "¿Qué significa etimológicamente la palabra 'filosofía'?",
+    "alternativas": ["Amor a la sabiduría", "Ciencia del pensamiento", "Estudio del alma", "Búsqueda del poder"],
+    "correcta": 0,
+    "explicacion": "Proviene del griego 'philo' (amor) y 'sophia' (sabiduría). Es la inclinación natural del espíritu hacia la verdad."
+  },
+  {
+    "id": 2,
+    "nivel": "facil",
+    "pregunta": "¿Qué filósofo es famoso por la máxima 'Conócete a ti mismo'?",
+    "alternativas": ["Aristóteles", "Sócrates", "Platón", "Epicuro"],
+    "correcta": 1,
+    "explicacion": "Sócrates adoptó este aforismo del templo de Delfos como base de la introspección y la virtud moral."
+  },
+  {
+    "id": 3,
+    "nivel": "facil",
+    "pregunta": "¿Quién escribió el célebre 'Mito de la Caverna' en su obra La República?",
+    "alternativas": ["Platón", "Aristóteles", "Parménides", "Heráclito"],
+    "correcta": 0,
+    "explicacion": "Platón lo expone en el Libro VII de La República para ilustrar la educación y la ignorancia del ser humano."
+  },
+  {
+    "id": 4,
+    "nivel": "facil",
+    "pregunta": "¿Qué representan las sombras proyectadas en la pared de la caverna?",
+    "alternativas": ["La verdad absoluta", "Las ilusiones y apariencias sensibles", "El mundo de las ideas puras", "La memoria de los antepasados"],
+    "correcta": 1,
+    "explicacion": "Las sombras simbolizan el conocimiento sensible y engañoso (doxa), que los prisioneros confunden con la realidad."
+  },
+  {
+    "id": 5,
+    "nivel": "facil",
+    "pregunta": "¿Cuál era la frase más emblemática de Sócrates sobre su propio saber?",
+    "alternativas": ["Solo sé que nada sé", "El conocimiento es poder", "Pienso, luego existo", "El hombre es la medida de todas las cosas"],
+    "correcta": 0,
+    "explicacion": "Sócrates reconocía los límites de la sabiduría humana frente a la arrogancia de creer saberlo todo sin examen."
+  },
+  {
+    "id": 6,
+    "nivel": "facil",
+    "pregunta": "¿Cómo se llama el método socrático de preguntas y respuestas para dar a luz la verdad?",
+    "alternativas": ["Mayéutica", "Silogismo", "Retórica", "Sofisma"],
+    "correcta": 0,
+    "explicacion": "La mayéutica (arte de las parteras) ayuda al interlocutor a 'parir' el conocimiento que reside en su propia razón."
+  },
+  {
+    "id": 7,
+    "nivel": "facil",
+    "pregunta": "Según Tales de Mileto, ¿cuál es el principio fundamental (arché) de todas las cosas?",
+    "alternativas": ["El fuego", "El agua", "El aire", "La tierra"],
+    "correcta": 1,
+    "explicacion": "Tales consideraba que el agua es el principio nutritivo y generador de toda vida en la naturaleza."
+  },
+  {
+    "id": 8,
+    "nivel": "facil",
+    "pregunta": "¿Qué filósofo presocrático afirmaba que 'todo fluye y nada permanece'?",
+    "alternativas": ["Heráclito", "Parménides", "Anaximandro", "Demócrito"],
+    "correcta": 0,
+    "explicacion": "Heráclito de Éfeso sostenía que la realidad está en continuo cambio y devenir, simbolizado por el fuego y el río."
+  },
+  {
+    "id": 9,
+    "nivel": "facil",
+    "pregunta": "¿Qué filósofo sostenía que el ser es uno, inmutable y eterno?",
+    "alternativas": ["Parménides", "Protágoras", "Epicuro", "Diógenes"],
+    "correcta": 0,
+    "explicacion": "Parménides de Elea afirmaba que el no-ser no puede pensarse ni existir; solo el Ser existe de forma inmutable."
+  },
+  {
+    "id": 10,
+    "nivel": "facil",
+    "pregunta": "¿Cuál es la rama de la filosofía que estudia lo que es correcto e incorrecto en el actuar?",
+    "alternativas": ["Estética", "Ética", "Metafísica", "Epistemología"],
+    "correcta": 1,
+    "explicacion": "La ética reflexiona sobre el bien, el deber, la felicidad y los fundamentos morales del comportamiento humano."
+  },
+  {
+    "id": 11,
+    "nivel": "facil",
+    "pregunta": "¿Qué filósofo fue maestro directo de Alejandro Magno?",
+    "alternativas": ["Aristóteles", "Platón", "Jenofonte", "Zenón de Citio"],
+    "correcta": 0,
+    "explicacion": "Aristóteles fue llamado por el rey Filipo II de Macedonia para instruir al joven príncipe Alejandro."
+  },
+  {
+    "id": 12,
+    "nivel": "facil",
+    "pregunta": "¿En qué ciudad nació la filosofía occidental?",
+    "alternativas": ["Mileto (Jonia)", "Roma", "Esparta", "Alejandría"],
+    "correcta": 0,
+    "explicacion": "En el siglo VI a.C., la ciudad costera griega de Mileto vio nacer el paso del mito al logos con Tales, Anaximandro y Anaxímenes."
+  },
+  {
+    "id": 13,
+    "nivel": "facil",
+    "pregunta": "¿Qué escuela filosófica fue fundada por Epicuro?",
+    "alternativas": ["El Jardín (Epicureísmo)", "La Academia", "El Liceo", "La Estoa"],
+    "correcta": 0,
+    "explicacion": "El Jardín de Epicuro acogía a hombres y mujeres para cultivar la amistad, la ataraxia y placeres serenos del alma."
+  },
+  {
+    "id": 14,
+    "nivel": "facil",
+    "pregunta": "¿Quién era el filósofo cínico que vivía en una tinaja y andaba con una lámpara buscando un hombre honesto?",
+    "alternativas": ["Diógenes de Sínope", "Antístenes", "Pirrón", "Crátilo"],
+    "correcta": 0,
+    "explicacion": "Diógenes despreciaba las convenciones sociales, las posesiones materiales y predicaba una vida autosuficiente y honesta."
+  },
+  {
+    "id": 15,
+    "nivel": "facil",
+    "pregunta": "¿Qué representa el Sol que ve el prisionero al salir de la caverna de Platón?",
+    "alternativas": ["La Idea del Bien", "El fuego mortal", "El poder militar", "La ilusión suprema"],
+    "correcta": 0,
+    "explicacion": "El Sol representa la Idea suprema del Bien, causa de la inteligibilidad, la verdad y la existencia de todo."
+  },
+  {
+    "id": 16,
+    "nivel": "facil",
+    "pregunta": "¿Qué es la 'doxa' según Platón?",
+    "alternativas": ["La simple opinión o creencia sin fundamento", "La ciencia matemática", "El conocimiento intuitivo", "La virtud divina"],
+    "correcta": 0,
+    "explicacion": "La 'doxa' es el grado inferior del conocimiento basado en los sentidos y opiniones no demostradas."
+  },
+  {
+    "id": 17,
+    "nivel": "facil",
+    "pregunta": "¿Qué es la 'episteme' en la filosofía griega?",
+    "alternativas": ["El conocimiento verdadero, justificado y científico", "El mito poético", "La fábula popular", "El engaño visual"],
+    "correcta": 0,
+    "explicacion": "Episteme es el saber fundamentado en razones universales y necesarias, opuesto a la mera doxa."
+  },
+  {
+    "id": 18,
+    "nivel": "facil",
+    "pregunta": "¿Qué escuela filosófica fundada por Zenón de Citio enseñaba la serenidad ante el destino?",
+    "alternativas": ["El Estoicismo", "El Hedonismo", "El Escepticismo", "Los Sofistas"],
+    "correcta": 0,
+    "explicacion": "El estoicismo enseña a gobernar las pasiones, aceptar el orden cósmico y cultivar la virtud inquebrantable."
+  },
+  {
+    "id": 19,
+    "nivel": "facil",
+    "pregunta": "¿Cuál es la famosa obra de Platón donde se describe el juicio y muerte de Sócrates?",
+    "alternativas": ["Apología de Sócrates", "El Banquete", "Fedón", "Timeo"],
+    "correcta": 0,
+    "explicacion": "En la Apología, Platón reproduce el vibrante discurso de defensa de Sócrates ante los jueces atenienses."
+  },
+  {
+    "id": 20,
+    "nivel": "facil",
+    "pregunta": "¿Cómo llamaba Aristóteles a la ciencia primera que estudia 'el ser en tanto que ser'?",
+    "alternativas": ["Filosofía primera (Metafísica)", "Física", "Poética", "Retórica"],
+    "correcta": 0,
+    "explicacion": "Aristóteles la definió como filosofía primera; posteriormente Andrónico de Rodas la catalogó como Metafísica."
+  },
+  {
+    "id": 21,
+    "nivel": "facil",
+    "pregunta": "¿Qué instrumento de ejecución se utilizó para quitarle la vida a Sócrates?",
+    "alternativas": ["Cicuta", "Guillotina", "Ahorcamiento", "Espada"],
+    "correcta": 0,
+    "explicacion": "Sócrates fue condenado a beber cicuta tras ser acusado injustamente de impiedad y corromper a la juventud."
+  },
+  {
+    "id": 22,
+    "nivel": "facil",
+    "pregunta": "¿Qué célebre escuela de pensamiento fundó Platón a las afueras de Atenas?",
+    "alternativas": ["La Academia", "El Liceo", "El Pórtico", "El Cenáculo"],
+    "correcta": 0,
+    "explicacion": "Fundada en los jardines dedicados al héroe Academo, La Academia funcionó durante siglos como cuna del pensamiento."
+  },
+  {
+    "id": 23,
+    "nivel": "facil",
+    "pregunta": "¿Qué famosa escuela fundó Aristóteles tras abandonar la Academia?",
+    "alternativas": ["El Liceo", "El Jardín", "La Estoa Pecile", "La Escuela de Alejandría"],
+    "correcta": 0,
+    "explicacion": "Aristóteles fundó el Liceo, donde sus discípulos paseaban mientras debatían (los peripatéticos)."
+  },
+  {
+    "id": 24,
+    "nivel": "facil",
+    "pregunta": "¿Qué rama de la filosofía reflexiona sobre la belleza, el arte y la sensibilidad?",
+    "alternativas": ["Estética", "Lógica", "Axiología", "Teodicea"],
+    "correcta": 0,
+    "explicacion": "La estética se ocupa de las cualidades de lo bello, la experiencia sublime y el significado del arte."
+  },
+  {
+    "id": 25,
+    "nivel": "facil",
+    "pregunta": "¿Quién propuso por primera vez la idea de que la materia está compuesta por 'átomos' indivisibles?",
+    "alternativas": ["Demócrito y Leucipo", "Pitágoras", "Anaxágoras", "Empédocles"],
+    "correcta": 0,
+    "explicacion": "Demócrito formuló la teoría atomista: el universo se compone de átomos infinitos que se mueven en el vacío."
+  },
+  {
+    "id": 26,
+    "nivel": "facil",
+    "pregunta": "¿Qué consideraban los pitagóricos como el principio y esencia oculta del cosmos?",
+    "alternativas": ["Los números y la armonía matemática", "El aire infinito", "El caos eterno", "La voluntad humana"],
+    "correcta": 0,
+    "explicacion": "Pitágoras descubrió la relación entre la música y las proporciones numéricas, deduciendo que el número gobierna el universo."
+  },
+  {
+    "id": 27,
+    "nivel": "facil",
+    "pregunta": "¿Qué actitud definió el inicio de la filosofía en la antigua Grecia?",
+    "alternativas": ["El asombro (thaumazein)", "El miedo ciego", "La devoción pasiva", "El afán de lucro"],
+    "correcta": 0,
+    "explicacion": "Tanto Platón como Aristóteles señalaron que el asombro o maravilla ante el misterio del mundo enciende el pensar filosófico."
+  },
+  {
+    "id": 28,
+    "nivel": "facil",
+    "pregunta": "¿Cuál es la principal herramienta que utiliza la filosofía para fundamentar sus afirmaciones?",
+    "alternativas": ["La razón y el argumento crítico", "La fe dogmática", "La superstición", "La fuerza militar"],
+    "correcta": 0,
+    "explicacion": "La filosofía no apela a revelaciones incuestionables, sino al análisis racional, la lógica y el debate dialéctico."
+  },
+  {
+    "id": 29,
+    "nivel": "facil",
+    "pregunta": "¿Qué nombre reciben los pensadores griegos que enseñaban oratoria a cambio de dinero en Atenas?",
+    "alternativas": ["Sofistas", "Presocráticos", "Eremitas", "Escolásticos"],
+    "correcta": 0,
+    "explicacion": "Los sofistas como Protágoras y Gorgias cobraban por enseñar el arte de convencer y persuadir en la asamblea."
+  },
+  {
+    "id": 30,
+    "nivel": "facil",
+    "pregunta": "¿Qué emoción experimenta el prisionero recién liberado de la caverna al ver la luz del sol?",
+    "alternativas": ["Deslumbramiento y dolor inicial", "Alegría inmediata sin molestia", "Indiferencia total", "Deseo de dormir"],
+    "correcta": 0,
+    "explicacion": "Al principio la luz enceguece sus ojos desacostumbrados, simbolizando lo arduo y doloroso que es despojarse de prejuicios."
+  },
+  {
+    "id": 31,
+    "nivel": "media",
+    "pregunta": "¿Cuántas dimensiones del ser humano se estudian tradicionalmente en el curso integral de filosofía?",
+    "alternativas": ["Siete dimensiones", "Tres dimensiones", "Cinco dimensiones", "Diez dimensiones"],
+    "correcta": 0,
+    "explicacion": "El enfoque holístico estudia 7 dimensiones: física, emocional, racional, social, ética, estética y espiritual."
+  },
+  {
+    "id": 32,
+    "nivel": "media",
+    "pregunta": "En la teoría platónica, ¿en qué consiste la 'Reminiscencia' (anamnesis)?",
+    "alternativas": ["Aprender es recordar lo que el alma ya contempló en el mundo de las Ideas", "Inventar conceptos nuevos", "Aceptar opiniones ajenas", "Olvidar los errores del pasado"],
+    "correcta": 0,
+    "explicacion": "Para Platón el alma inmortal conoció la verdad suprema antes de encarnar; por ello, conocer es recordar (anamnesis)."
+  },
+  {
+    "id": 33,
+    "nivel": "media",
+    "pregunta": "¿Cuáles son las tres partes del alma según la psicología de Platón en Fedro y La República?",
+    "alternativas": ["Racional, irascible y concupiscible (apetitiva)", "Consciente, subconsciente e inconsciente", "Física, mental y celestial", "Sensorial, motora y vegetativa"],
+    "correcta": 0,
+    "explicacion": "El auriga (razón) debe gobernar al coraje noble (irascible) y a los apetitos materiales (concupiscible)."
+  },
+  {
+    "id": 34,
+    "nivel": "media",
+    "pregunta": "Según la Ética a Nicómaco de Aristóteles, ¿cuál es el fin último (telos) de la vida humana?",
+    "alternativas": ["La felicidad (Eudaimonía)", "La acumulación de riquezas", "El placer físico inmediato", "La fama eterna"],
+    "correcta": 0,
+    "explicacion": "Aristóteles enseña que la felicidad lograda mediante la virtud y el ejercicio de la razón es el bien supremo del hombre."
+  },
+  {
+    "id": 35,
+    "nivel": "media",
+    "pregunta": "¿Cómo define Aristóteles la virtud moral?",
+    "alternativas": ["Como el justo término medio entre dos extremos viciosos", "Como la renuncia absoluta a todo deseo", "Como la obediencia ciega a las leyes", "Como una emoción espontánea"],
+    "correcta": 0,
+    "explicacion": "La valentía, por ejemplo, es el término medio prudente entre la cobardía (defecto) y la temeridad (exceso)."
+  },
+  {
+    "id": 36,
+    "nivel": "media",
+    "pregunta": "¿Qué representan los objetos transportados por detrás del muro en el mito de la caverna?",
+    "alternativas": ["Arquetipos artificiales usados para manipular la percepción", "La naturaleza divina", "Las almas de los justos", "El sol del conocimiento"],
+    "correcta": 0,
+    "explicacion": "Son estatuas y figuras creadas por hombres que proyectan sombras engañosas sobre los prisioneros."
+  },
+  {
+    "id": 37,
+    "nivel": "media",
+    "pregunta": "¿Cuál es la 'teoría de las cuatro causas' formulada por Aristóteles?",
+    "alternativas": ["Material, formal, eficiente y final", "Pasada, presente, futura e imaginaria", "Física, química, biológica y social", "Divina, humana, animal y vegetal"],
+    "correcta": 0,
+    "explicacion": "Para explicar cualquier entidad se requiere saber: de qué está hecha (material), qué es (formal), quién la hizo (eficiente) y para qué sirve (final)."
+  },
+  {
+    "id": 38,
+    "nivel": "media",
+    "pregunta": "¿Qué postula el concepto oriental de 'Dharma' en la filosofía tradicional?",
+    "alternativas": ["El deber ético, el orden cósmico y la ley recta de vida", "El ciclo de venganza", "La acumulación de riquezas", "La destrucción del universo"],
+    "correcta": 0,
+    "explicacion": "Dharma significa rectitud, propósito sagrado, orden natural y cumplimiento del deber vocacional y moral."
+  },
+  {
+    "id": 39,
+    "nivel": "media",
+    "pregunta": "¿Qué sostiene la teoría del 'Hilemorfismo' aristotélico?",
+    "alternativas": ["Todas las sustancias están compuestas indisolublemente de materia (hyle) y forma (morphe)", "El espíritu existe sin ninguna materia", "La materia es una ilusión de los ojos", "Todo cambia al azar"],
+    "correcta": 0,
+    "explicacion": "Aristóteles rechazó la separación platónica de dos mundos: la forma esencial existe inmanente dentro de la materia física."
+  },
+  {
+    "id": 40,
+    "nivel": "media",
+    "pregunta": "¿Qué filósofo moderno dudó metódicamente de todo hasta hallar una certeza indudable?",
+    "alternativas": ["René Descartes", "Immanuel Kant", "John Locke", "David Hume"],
+    "correcta": 0,
+    "explicacion": "Descartes dudó incluso de los sentidos para descubrir su verdad fundacional: 'Cogito, ergo sum' (Pienso, luego existo)."
+  },
+  {
+    "id": 41,
+    "nivel": "media",
+    "pregunta": "¿En qué consiste la 'Ataraxia' buscada por epicúreos y estoicos?",
+    "alternativas": ["Imperturbabilidad y serenidad del ánimo ante las turbulencias", "Excitación festiva perpetua", "Dominio militar sobre otros pueblos", "Conocimiento de todas las lenguas"],
+    "correcta": 0,
+    "explicacion": "La ataraxia es el estado de paz interior libre de angustias, miedos injustificados y pasiones desbordadas."
+  },
+  {
+    "id": 42,
+    "nivel": "media",
+    "pregunta": "¿Qué es la 'Apatheia' para los filósofos estoicos?",
+    "alternativas": ["Estar libre de pasiones destructivas que ciegan la razón", "Falta total de compasión hacia el prójimo", "Pereza física y abulia", "Tristeza crónica"],
+    "correcta": 0,
+    "explicacion": "No es frialdad insensible, sino soberanía espiritual para no dejarse arrastrar por la ira, el pánico o la codicia."
+  },
+  {
+    "id": 43,
+    "nivel": "media",
+    "pregunta": "¿Cuál es la célebre frase de Protágoras que sintetiza el relativismo de los sofistas?",
+    "alternativas": ["El hombre es la medida de todas las cosas", "La verdad es fija e inmutable", "No hay nada nuevo bajo el sol", "La virtud es innata"],
+    "correcta": 0,
+    "explicacion": "Protágoras sostenía que las cosas son para cada cual según cómo se le manifiestan a su percepción individual."
+  },
+  {
+    "id": 44,
+    "nivel": "media",
+    "pregunta": "En la alegoría del carro alado de Platón, ¿qué representa el corcel blanco?",
+    "alternativas": ["El ánimo noble, el valor y el sentido del deber", "Los apetitos carnales desordenados", "La razón calculadora", "La ignorancia absoluta"],
+    "correcta": 0,
+    "explicacion": "El caballo blanco ama el honor con templanza y ayuda al auriga; el caballo negro representa la pasión instintiva y rebelde."
+  },
+  {
+    "id": 45,
+    "nivel": "media",
+    "pregunta": "¿Cuál es la diferencia entre potencia y acto según Aristóteles?",
+    "alternativas": ["La potencia es lo que algo puede llegar a ser; el acto es lo que ya es actualmente", "La potencia es fuerza física y el acto es una ley jurídica", "Son términos idénticos", "La potencia es pasado y el acto es ilusión"],
+    "correcta": 0,
+    "explicacion": "Una semilla es un árbol en potencia; el árbol crecido es el árbol en acto. Así explica Aristóteles el movimiento."
+  },
+  {
+    "id": 46,
+    "nivel": "media",
+    "pregunta": "¿Qué papel cumplen las matemáticas en el pensamiento de Platón?",
+    "alternativas": ["Un puente propedéutico para elevar la mente desde lo sensible hacia las Ideas", "Un truco comercial sin valor formativo", "Un juego estético sin relación con la verdad", "La meta final de toda sabiduría"],
+    "correcta": 0,
+    "explicacion": "A la entrada de su Academia se leía: 'No entre aquí quien no sepa geometría', pues entrena el pensamiento abstracto."
+  },
+  {
+    "id": 47,
+    "nivel": "media",
+    "pregunta": "¿Qué advierte Platón sobre lo que pasaría si el filósofo liberado regresa a la caverna a liberar a sus compañeros?",
+    "alternativas": ["Se burlarían de él e incluso intentarían matarlo", "Lo coronarían rey de inmediato con cánticos", "Le darían todo su oro", "Escaparían corriendo todos juntos"],
+    "correcta": 0,
+    "explicacion": "Platón aludía al destino de Sócrates: las mentes apegadas a sus sombras defienden su ilusión y atacan al que las despierta."
+  },
+  {
+    "id": 48,
+    "nivel": "media",
+    "pregunta": "¿Qué afirmaba Heráclito sobre bañarse en el mismo río?",
+    "alternativas": ["Nadie se baña dos veces en el mismo río, porque nuevas aguas fluyen sobre él", "El agua es siempre estática", "El río es un engaño óptico", "Solo los sabios pueden cruzarlo"],
+    "correcta": 0,
+    "explicacion": "Tanto el río como la persona que se baña han cambiado en el siguiente instante: el ser es devenir permanente."
+  },
+  {
+    "id": 49,
+    "nivel": "media",
+    "pregunta": "¿Cuál es la virtud propia de la parte racional del alma según Platón?",
+    "alternativas": ["La Sabiduría o Prudencia (Sophía / Phrónesis)", "La Fortaleza o Valor", "La Templanza o Moderación", "La Ambición"],
+    "correcta": 0,
+    "explicacion": "La prudencia guía a la razón, la fortaleza sostiene al coraje y la templanza modera los apetitos; su armonía produce la Justicia."
+  },
+  {
+    "id": 50,
+    "nivel": "media",
+    "pregunta": "¿Cómo define Aristóteles al ser humano en su dimensión comunitaria?",
+    "alternativas": ["Zoon Politikón (Animal Político / Social por naturaleza)", "Un individuo autosuficiente que debe aislarse", "Un dios encadenado a una bestia", "Una máquina biológica sin propósito"],
+    "correcta": 0,
+    "explicacion": "El ser humano solo realiza plenamente su potencial ético y racional conviviendo en la 'polis' con sus semejantes."
+  },
+  {
+    "id": 51,
+    "nivel": "media",
+    "pregunta": "¿Qué significa el término 'Teleología' en filosofía?",
+    "alternativas": ["La doctrina que explica los procesos por su finalidad o propósito intrínseco", "El estudio de las ondas de radio", "La adoración de dioses lejanos", "La teoría de los espejos"],
+    "correcta": 0,
+    "explicacion": "La teleología aristotélica sostiene que la naturaleza no hace nada en vano; todo ser persigue una perfección o fin (telos)."
+  },
+  {
+    "id": 52,
+    "nivel": "media",
+    "pregunta": "¿Cuál es la postura filosófica del 'Escepticismo' clásico?",
+    "alternativas": ["Suspender el juicio (epojé) ante la imposibilidad de alcanzar certezas absolutas", "Creer en cualquier teoría de moda", "Negar la existencia del mundo físico", "Afirmar que solo la religión tiene la verdad"],
+    "correcta": 0,
+    "explicacion": "Pirrón de Elis enseñaba que al abstenerse de formular dogmas apresurados se alcanza la serenidad espiritual."
+  },
+  {
+    "id": 53,
+    "nivel": "media",
+    "pregunta": "¿Qué es la 'ironía socrática'?",
+    "alternativas": ["Fingir ignorancia para desenmascarar los falsos saberes del interlocutor", "Insultar abiertamente a los discípulos", "Hacer chistes en el tribunal", "Guardar silencio eterno"],
+    "correcta": 0,
+    "explicacion": "Con preguntas agudas, Sócrates hacía que los pretendidos sabios descubrieran por sí mismos sus contradicciones."
+  },
+  {
+    "id": 54,
+    "nivel": "media",
+    "pregunta": "¿Qué simbolizan las cadenas de los prisioneros en la alegoría de la caverna?",
+    "alternativas": ["Los prejuicios, hábitos ciegos y la ignorancia no cuestionada", "Castigos impuestos por un tirano extranjero", "Cadenas de oro como adorno", "Leyes justas de la ciudad"],
+    "correcta": 0,
+    "explicacion": "Las cadenas sujetan el cuello y las piernas de modo que solo pueden mirar hacia adelante: son las ataduras de la mente."
+  },
+  {
+    "id": 55,
+    "nivel": "media",
+    "pregunta": "¿Qué corriente ética afirma que la mejor acción es aquella que produce la mayor felicidad para el mayor número?",
+    "alternativas": ["Utilitarismo", "Deontologismo kantiano", "Nihilismo", "Cinegetismo"],
+    "correcta": 0,
+    "explicacion": "Jeremy Bentham y John Stuart Mill formularon el principio utilitarista de maximización del bienestar general."
+  },
+  {
+    "id": 56,
+    "nivel": "media",
+    "pregunta": "¿En qué diálogo expone Platón sus teorías sobre la naturaleza del Amor (Eros)?",
+    "alternativas": ["El Banquete (Simposio)", "Critón", "Menón", "Gorgias"],
+    "correcta": 0,
+    "explicacion": "A través de Diotima de Mantinea, Sócrates revela que el Amor es la aspiración ascendente hacia la Belleza y el Bien supremo."
+  },
+  {
+    "id": 57,
+    "nivel": "media",
+    "pregunta": "¿Qué filósofo medieval sintetizó el pensamiento de Aristóteles con la teología cristiana?",
+    "alternativas": ["Santo Tomás de Aquino", "San Agustín de Hipona", "Guillermo de Ockham", "Duns Escoto"],
+    "correcta": 0,
+    "explicacion": "En su monumental Suma Teológica, Tomás de Aquino armonizó fe y razón valiéndose del aparato conceptual aristotélico."
+  },
+  {
+    "id": 58,
+    "nivel": "media",
+    "pregunta": "¿Cuál es la ley del 'Imperativo Categórico' formulada por Immanuel Kant?",
+    "alternativas": ["Obra solo según aquella máxima por la cual puedas querer que se vuelva ley universal", "Haz el bien solo cuando alguien te esté mirando", "Persigue tu propio interés a cualquier costo", "Sigue la costumbre de tu país sin cuestionar"],
+    "correcta": 0,
+    "explicacion": "Kant fundamenta el deber moral autónomo: la persona debe ser tratada siempre como un fin en sí misma, jamás como un medio."
+  },
+  {
+    "id": 59,
+    "nivel": "media",
+    "pregunta": "¿Qué afirmaba Epicuro sobre la muerte para disipar el miedo en sus discípulos?",
+    "alternativas": ["La muerte nada es para nosotros: mientras existimos ella no está, y cuando llega ya no estamos", "La muerte es un tormento eterno", "Debemos temer a los dioses cada día", "La muerte destruye solo el dinero"],
+    "correcta": 0,
+    "explicacion": "Epicuro enseñaba que la disolución de los sentidos imposibilita el sufrimiento tras la muerte; temerla es una angustia irracional."
+  },
+  {
+    "id": 60,
+    "nivel": "media",
+    "pregunta": "¿A qué se refiere la metáfora del 'Simulacro' en la filosofía contemporánea de Jean Baudrillard?",
+    "alternativas": ["Una copia de la cual ya no queda un original real de referencia", "Un espejo de alta calidad", "Un experimento científico en laboratorio", "Un cuadro renacentista"],
+    "correcta": 0,
+    "explicacion": "Baudrillard describe cómo la sociedad de consumo hiperreal sustituye la realidad por signos que solo se refieren a sí mismos."
+  },
+  {
+    "id": 61,
+    "nivel": "dificil",
+    "pregunta": "¿Qué relación existe exactamente entre los principios orientales de Karma y Dharma?",
+    "alternativas": ["Karma es la ley de acción y causalidad moral; Dharma es el orden cósmico y el deber ético que equilibra la acción", "Son conceptos opuestos y mutuamente excluyentes", "Son meros sinónimos literarios sin diferencia filosófica", "Karma se aplica solo a dioses y Dharma solo a plantas"],
+    "correcta": 0,
+    "explicacion": "El Karma genera consecuencias de acuerdo a los actos ejecutados; actuar en consonancia con el Dharma purifica el fruto kármico."
+  },
+  {
+    "id": 62,
+    "nivel": "dificil",
+    "pregunta": "En la metafísica platónica, ¿cuál es la diferencia ontológica entre el mundo sensible y el mundo inteligible?",
+    "alternativas": ["El sensible es cambiante, corruptible y aparente; el inteligible es eterno, inmutable y arquetípico", "El sensible es perfecto y el inteligible es imaginario", "Ambos son materiales con distinta temperatura", "El sensible fue creado por el hombre y el inteligible no existe"],
+    "correcta": 0,
+    "explicacion": "Las cosas físicas son meras copias defectuosas de las Formas o Ideas puras que residen en el Topos Uranos inteligible."
+  },
+  {
+    "id": 63,
+    "nivel": "dificil",
+    "pregunta": "¿Qué representa la figura del 'Demiurgo' en el diálogo Timeo de Platón?",
+    "alternativas": ["Un artesano divino inteligente que moldea la materia caótica siguiendo el modelo eterno de las Ideas", "El diablo creador del mal", "El sol físico de nuestro sistema", "Un prisionero ciego de la caverna"],
+    "correcta": 0,
+    "explicacion": "El Demiurgo no crea de la nada (ex nihilo), sino que ordena la materia preexistente contemplando las Ideas perfectas."
+  },
+  {
+    "id": 64,
+    "nivel": "dificil",
+    "pregunta": "Según la analogía de la Línea Dividida de Platón, ¿cuál es el grado supremo de conocimiento?",
+    "alternativas": ["Noesis (Dialéctica / Intuición intelectiva pura de las Ideas)", "Dianoia (Razonamiento matemático deductivo)", "Pistis (Creencia empírica de objetos físicos)", "Eikasia (Imaginación de sombras e imágenes)"],
+    "correcta": 0,
+    "explicacion": "La Noesis capta los primeros principios universales sin apoyarse en figuras sensibles, alcanzando la contemplación del Bien."
+  },
+  {
+    "id": 65,
+    "nivel": "dificil",
+    "pregunta": "¿Cómo define Aristóteles el concepto de 'Primer Motor Inmóvil'?",
+    "alternativas": ["Acto Puro, sin potencia ni materia, causa final que mueve al cosmos atrayéndolo por deseo y amor", "Una máquina gigantesca que empuja planetas", "El sol orbitando sobre la tierra", "El alma individual de cada hombre"],
+    "correcta": 0,
+    "explicacion": "Para evitar una regresión infinita de causas, debe haber un motor que mueve sin ser movido, siendo Acto Puro (Theos)."
+  },
+  {
+    "id": 66,
+    "nivel": "dificil",
+    "pregunta": "En la Crítica de la Razón Pura de Kant, ¿cuál es la distinción fundamental entre 'Fenómeno' y 'Noúmeno'?",
+    "alternativas": ["El fenómeno es la realidad tal como se nos manifiesta estructurada por nuestras facultades; el noúmeno es la cosa-en-sí incognoscible", "El fenómeno es falso y el noúmeno es material", "El noúmeno es un sueño y el fenómeno un milagro", "Son categorías idénticas en la experiencia"],
+    "correcta": 0,
+    "explicacion": "Solo podemos conocer lo que entra por el espacio, tiempo y las categorías del entendimiento (fenómeno); la cosa en sí permanece inaccesible."
+  },
+  {
+    "id": 67,
+    "nivel": "dificil",
+    "pregunta": "¿Qué plantea la célebre 'Paradoja de la Flecha' de Zenón de Elea?",
+    "alternativas": ["En cualquier instante indivisible la flecha ocupa un espacio igual a sí misma; por tanto, en ningún instante se mueve", "La flecha viaja más rápido que el pensamiento", "El viento detiene cualquier proyectil", "La flecha se dobla al ser disparada"],
+    "correcta": 0,
+    "explicacion": "Zenón defendía la inmutabilidad del Ser de Parménides demostrando que admitir el movimiento continuo conduce a paradojas lógicas."
+  },
+  {
+    "id": 68,
+    "nivel": "dificil",
+    "pregunta": "¿Qué sostiene la doctrina de la 'Coincidentia Oppositorum' en Nicolás de Cusa y la filosofía renacentista?",
+    "alternativas": ["En el Infinito divino todos los opuestos y contradicciones aparentes se unifican y trascienden", "Que la contradicción destruye cualquier mente", "Que el mal y el bien deben anularse mutuamente", "Que solo existen cosas iguales"],
+    "correcta": 0,
+    "explicacion": "Para el Cúsenos, la mente humana racional divide la realidad en dualidades, pero en la unidad suprema de Dios los contrarios coinciden."
+  },
+  {
+    "id": 69,
+    "nivel": "dificil",
+    "pregunta": "¿En qué consiste el argumento ontológico de San Anselmo de Canterbury sobre la existencia de Dios?",
+    "alternativas": ["Dios es 'aquello mayor de lo cual nada puede concebirse'; si solo existiera en el pensamiento, no sería lo mayor posible, luego existe necesariamente en la realidad", "Dios se demuestra contando las estrellas", "Dios existe porque lo ordenan los gobernantes", "Dios es una hipótesis matemática no demostrable"],
+    "correcta": 0,
+    "explicacion": "San Anselmo deduce la existencia real de Dios a partir de la mera intelección de su concepto supremo de perfección."
+  },
+  {
+    "id": 70,
+    "nivel": "dificil",
+    "pregunta": "¿Cómo interpreta Baruch Spinoza la relación entre Dios y la Naturaleza ('Deus sive Natura')?",
+    "alternativas": ["Panteísmo monista: Solo existe una única Sustancia infinita, de la cual la naturaleza y los pensamientos son atributos y modos", "Dualismo radical de dos creadores", "Ateísmo materialista ciego", "Poli-teísmo pagano clásico"],
+    "correcta": 0,
+    "explicacion": "Spinoza rechaza un Dios antropomórfico trascendente: Dios y el Universo son una misma y única realidad ontológica."
+  },
+  {
+    "id": 71,
+    "nivel": "dificil",
+    "pregunta": "¿Qué es la 'Dialéctica' para Georg Wilhelm Friedrich Hegel?",
+    "alternativas": ["El movimiento inmanente del Espíritu a través de Tesis, Antítesis y Síntesis superadora (Aufhebung)", "Una técnica para ganar debates de abogados", "Un conjunto de silogismos matemáticos fijos", "La negación destructiva sin fruto"],
+    "correcta": 0,
+    "explicacion": "La contradicción es el motor del desarrollo histórico y de la conciencia que supera sus límites integrando la oposición."
+  },
+  {
+    "id": 72,
+    "nivel": "dificil",
+    "pregunta": "¿Qué postula la teoría del 'Eterno Retorno' en Friedrich Nietzsche?",
+    "alternativas": ["Un imperativo ético y ontológico supremo: vivir cada instante de modo que desees revivirlo infinitas veces con gozo afirmativo", "Una condena a reencarnar en animales inferiores", "Un reloj mecánico que gira al revés", "La repetición exacta de los errores políticos"],
+    "correcta": 0,
+    "explicacion": "Es la prueba de fuego de la voluntad de poder y del Amor Fati: abrazar la vida con tal plenitud que su repetición eterna sea bienvenida."
+  },
+  {
+    "id": 73,
+    "nivel": "dificil",
+    "pregunta": "¿Qué significado tiene la palabra 'Aletheia' para los filósofos griegos y Martin Heidegger?",
+    "alternativas": ["Desocultamiento, revelación o traer a la luz lo que estaba velado", "Construcción de un dogma inamovible", "Retórica elegante ante jueces", "Invención de una mentira piadosa"],
+    "correcta": 0,
+    "explicacion": "Literalmente 'a-letheia' es el cese del olvido, desvelar la verdad ontológica que permanece encubierta por la cotidianidad."
+  },
+  {
+    "id": 74,
+    "nivel": "dificil",
+    "pregunta": "En el Vedanta Advaita hindú de Adi Shankara, ¿qué significa 'Maya'?",
+    "alternativas": ["El velo cósmico ilusorio que proyecta multiplicidad y separación donde solo existe la Conciencia Una (Brahman)", "Una diosa protectora de la agricultura", "La materia física indestructible", "El castigo de las almas perversas"],
+    "correcta": 0,
+    "explicacion": "Maya es la ilusión perceptiva que hace creer que el individuo está separado del Todo cósmico, análoga a la caverna de Platón."
+  },
+  {
+    "id": 75,
+    "nivel": "dificil",
+    "pregunta": "¿Qué critica David Hume sobre el principio de Causalidad en el empirismo?",
+    "alternativas": ["No percibimos una 'conexión necesaria' entre causa y efecto, solo una conjunción constante habitual basada en la costumbre", "Que todas las cosas son causadas por números", "Que la causalidad es una verdad matemática infalible", "Que los efectos preceden a las causas en el tiempo"],
+    "correcta": 0,
+    "explicacion": "Hume demostró que la mente proyecta la idea de causa por hábito psicológico al ver repetirse dos eventos sucesivamente."
+  },
+  {
+    "id": 76,
+    "nivel": "dificil",
+    "pregunta": "¿Cuál es la famosa tesis de Arthur Schopenhauer en 'El mundo como voluntad y representación'?",
+    "alternativas": ["El mundo empírico es mera representación fenoménica, mientras que la cosa-en-sí kantiana es una ciega e insaciable Voluntad cósmica", "El mundo es una máquina perfecta creada para la dicha humana", "La razón domina absolutamente todas las pasiones", "No existe nada más allá de lo que tocan los dedos"],
+    "correcta": 0,
+    "explicacion": "Schopenhauer identificó la esencia oculta de todo ser con la Voluntad de vivir, origen del dolor y la sed incesante de la existencia."
+  },
+  {
+    "id": 77,
+    "nivel": "dificil",
+    "pregunta": "¿Qué plantea el concepto de 'Dasein' en Ser y Tiempo de Heidegger?",
+    "alternativas": ["El 'Ser-ahí': el ente humano cuya esencia radica en comprender su propia existencia y estar arrojado en el mundo", "Un objeto físico inanimado como una roca", "Un algoritmo de cálculo formal", "El alma inmortal separada del cuerpo"],
+    "correcta": 0,
+    "explicacion": "El Dasein no es un sujeto espectador abstracto, sino un ser encarnado en proyectos, tiempo y finitud hacia la muerte."
+  },
+  {
+    "id": 78,
+    "nivel": "dificil",
+    "pregunta": "¿Qué es la 'Navaja de Ockham' (Principio de Parsimonia)?",
+    "alternativas": ["No deben multiplicarse los entes sin necesidad; la explicación más simple y con menos supuestos suele ser la correcta", "Un arma ceremonial de los monjes franciscanos", "Un método para dudar de la bondad de los demás", "Una regla para alargar los discursos retóricos"],
+    "correcta": 0,
+    "explicacion": "Guillermo de Ockham formuló este principio ontológico que corta las hipótesis redundantes y entidades metafísicas innecesarias."
+  },
+  {
+    "id": 79,
+    "nivel": "dificil",
+    "pregunta": "¿Cómo resuelve Gottfried Leibniz el problema mente-cuerpo en su Monadología?",
+    "alternativas": ["Mediante la Armonía Preestablecida coordinada por Dios entre sustancias simples e inextensas llamadas mónadas", "Mediante una glándula pineal física", "Negando la existencia del pensamiento", "Diciendo que el cuerpo es un fantasma"],
+    "correcta": 0,
+    "explicacion": "Las mónadas 'no tienen ventanas' por donde algo pueda entrar o salir; Dios sincronizó sus desarrollos desde el origen de los tiempos."
+  },
+  {
+    "id": 80,
+    "nivel": "dificil",
+    "pregunta": "¿Qué es la 'Epojé' (reducción fenomenológica) en Edmund Husserl?",
+    "alternativas": ["Poner 'entre paréntesis' la actitud natural y la creencia ingenua en el mundo exterior para estudiar las vivencias de la conciencia pura", "Una oración poética griega", "La negación nihilista de la ciencia", "Un método quirúrgico del cerebro"],
+    "correcta": 0,
+    "explicacion": "La epojé suspende los prejuicios ontológicos para describir con fidelidad las esencias tal como aparecen ante la intencionalidad de la conciencia."
+  },
+  {
+    "id": 81,
+    "nivel": "dificil",
+    "pregunta": "¿Qué afirma Jean-Paul Sartre en su tesis fundamental del Existencialismo?",
+    "alternativas": ["La existencia precede a la esencia: el hombre primero existe, surge en el mundo, y solo después se define a sí mismo por sus actos", "El destino de cada individuo está fijado al nacer", "La esencia humana fue programada genéticamente", "Dios redactó la esencia de cada persona de antemano"],
+    "correcta": 0,
+    "explicacion": "Al no existir un determinismo que defina a priori quiénes somos, el ser humano está 'condenado a ser libre' y es responsable de su vida."
+  },
+  {
+    "id": 82,
+    "nivel": "dificil",
+    "pregunta": "¿Qué simboliza el Ouroboros en la filosofía hermética y alquímica tradicional?",
+    "alternativas": ["La serpiente que se muerde la cola: la unidad primordial, la eternidad y la regeneración cíclica constante del cosmos", "El veneno mortal que destruye la sabiduría", "La división irremediable del tiempo", "La victoria de las sombras sobre la luz"],
+    "correcta": 0,
+    "explicacion": "El Ouroboros encarna el lema 'En to Pan' (El Uno es el Todo), manifestando que el final de un ciclo engendra el renacer de otro."
+  },
+  {
+    "id": 83,
+    "nivel": "dificil",
+    "pregunta": "¿Qué entiende Ludwig Wittgenstein en el Tractatus Logico-Philosophicus por los límites del lenguaje?",
+    "alternativas": ["'Los límites de mi lenguaje significan los límites de mi mundo'; sobre lo que no se puede hablar racionalmente, mejor es callar", "Que el lenguaje puede describir cualquier misterio divino", "Que las palabras no tienen ninguna relación con los hechos", "Que el diccionario debe tener un número fijo de páginas"],
+    "correcta": 0,
+    "explicacion": "La lógica traza las fronteras del sentido verificable; las cuestiones éticas y místicas quedan fuera del discurso fáctico descriptivo."
+  },
+  {
+    "id": 84,
+    "nivel": "dificil",
+    "pregunta": "¿Qué representa el concepto platónico de 'Khora' en el Timeo?",
+    "alternativas": ["El receptáculo espacial informe e indeterminado donde las Formas se imprimen para dar lugar a las cosas sensibles", "El fuego central del olimpo", "La música celestial de las esferas", "La mente del filósofo gobernante"],
+    "correcta": 0,
+    "explicacion": "Khora es una 'nodriza del devenir', un espacio primordial sin forma propia que acoge y hace posible la corporización de las Ideas."
+  },
+  {
+    "id": 85,
+    "nivel": "dificil",
+    "pregunta": "¿Cuál es la interpretación de Michel Foucault sobre el 'Panóptico' de Bentham en Vigilar y Castigar?",
+    "alternativas": ["Un dispositivo arquitectónico de poder que induce en el individuo un estado consciente y permanente de visibilidad que interioriza la vigilancia", "Un telescopio de alta precisión para ver planetas", "Un teatro circular de comedia griega", "Un tipo de prisión humanitaria sin guardias"],
+    "correcta": 0,
+    "explicacion": "El poder disciplinario moderno no necesita recurrir a cadenas físicas continuas, sino a la autocensura generada por saberse potencialmente vigilado."
+  },
+  {
+    "id": 86,
+    "nivel": "dificil",
+    "pregunta": "¿Qué expone Plotino en las Enéadas sobre la procesión del cosmos desde 'El Uno'?",
+    "alternativas": ["La emanación cósmica: del Uno sobreabundante emana el Noûs (Espíritu), de este el Alma del Mundo, y finalmente el cosmos material", "Una guerra violenta entre dioses celestes", "La nada absoluta que no engendra nada", "La creación material mediante fórmulas químicas"],
+    "correcta": 0,
+    "explicacion": "Para el neoplatonismo, el cosmos no surge de la nada ni por choque azaroso, sino por una emanación radiante de luz desde la fuente suprema."
+  },
+  {
+    "id": 87,
+    "nivel": "dificil",
+    "pregunta": "¿Qué define la paradoja ética del 'Barco de Teseo'?",
+    "alternativas": ["Si se reemplazan progresivamente todas las tablas de un barco, ¿sigue siendo la misma nave o se convirtió en otra distinta?", "Si un barco puede navegar sin capitán", "Si el mar tiene memoria de los navíos", "La velocidad máxima permitida a los barcos de guerra"],
+    "correcta": 0,
+    "explicacion": "Cuestiona el problema de la identidad ontológica y la persistencia del ser a través de la transformación de sus partes materiales."
+  },
+  {
+    "id": 88,
+    "nivel": "dificil",
+    "pregunta": "¿Qué significa el concepto de 'Catarsis' en la Poética de Aristóteles?",
+    "alternativas": ["La purificación y liberación emocional del espectador a través del terror (phobos) y la compasión (éleos) provocados por la tragedia", "La memorización perfecta del guión teatral", "El aplauso ruidoso al final de la obra", "La risa descontrolada en la comedia"],
+    "correcta": 0,
+    "explicacion": "Al contemplar las vicisitudes del héroe trágico, el alma del espectador se depura de sus propias pasiones desordenadas."
+  },
+  {
+    "id": 89,
+    "nivel": "dificil",
+    "pregunta": "¿Cuál es la crítica central de Karl Popper al principio de verificación positivista en la filosofía de la ciencia?",
+    "alternativas": ["Una teoría científica nunca puede verificarse de forma definitiva; su carácter científico reside en ser 'falsable' empíricamente", "Que las matemáticas no deben usarse en física", "Que los científicos solo deben guiarse por intuición mística", "Que cualquier creencia es igualmente válida"],
+    "correcta": 0,
+    "explicacion": "Millones de cisnes blancos no prueban la ley 'todos los cisnes son blancos'; pero el avistamiento de un solo cisne negro la refuta."
+  },
+  {
+    "id": 90,
+    "nivel": "dificil",
+    "pregunta": "¿Cuál es el sentido filosófico final del regreso a la caverna en la alegoría de Platón?",
+    "alternativas": ["El deber ético y político del filósofo de no quedarse contemplando la luz a solas, sino descender a iluminar y emancipar a sus semejantes", "Divertirse asustando a los prisioneros ignorantes", "Recuperar las pertenencias olvidadas en la celda", "Reconocer que la oscuridad era mejor que la luz"],
+    "correcta": 0,
+    "explicacion": "La sabiduría no es un privilegio solitario: el compromiso supremo del sabio liberado es retornar para ayudar a otros a romper sus cadenas."
+  }
+]

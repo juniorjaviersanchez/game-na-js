@@ -1,0 +1,77 @@
+[
+  {
+    "id": "selina",
+    "name": "Selina / Sophia",
+    "title": "La Buscadora de la Verdad",
+    "color": "#e040fb",
+    "accentColor": "#00e5ff",
+    "theme": "cyber-runner",
+    "bio": "Ágil y perspicaz. Despierta en la caverna con visores holográficos que detectan las resonancias de la verdad.",
+    "equipment": "Magneto de Sabiduría y Botas Cinéticas",
+    "speedBonus": 1.05,
+    "magneticRadius": 4.5,
+    "perkDescription": "+30% radio de atracción magnética para chispas de conocimiento.",
+    "stats": {
+      "agilidad": 95,
+      "sabiduria": 80,
+      "intuicion": 88
+    },
+    "meshConfig": {
+      "suitColor": "#221d45",
+      "trimColor": "#e040fb",
+      "visorColor": "#00e5ff",
+      "skinColor": "#ffdfbf",
+      "hairColor": "#ff5252"
+    }
+  },
+  {
+    "id": "kael",
+    "name": "Kael / Noûs",
+    "title": "El Guardián Dialéctico",
+    "color": "#00e676",
+    "accentColor": "#ffab00",
+    "theme": "philo-warrior",
+    "bio": "Firme y reflexivo. Rompe las cadenas de la ignorancia con su voluntad inquebrantable y serenidad mental.",
+    "equipment": "Guanteletes Estoicos y Estola de Razón",
+    "speedBonus": 1.0,
+    "magneticRadius": 3.0,
+    "perkDescription": "+10 segundos adicionales para meditar en preguntas de alta dificultad.",
+    "stats": {
+      "agilidad": 82,
+      "sabiduria": 94,
+      "intuicion": 85
+    },
+    "meshConfig": {
+      "suitColor": "#1b3b22",
+      "trimColor": "#00e676",
+      "visorColor": "#ffd700",
+      "skinColor": "#f5cda7",
+      "hairColor": "#3e2723"
+    }
+  },
+  {
+    "id": "lumina",
+    "name": "Lumina / Diotima",
+    "title": "La Sacerdotisa de la Luz",
+    "color": "#ffd700",
+    "accentColor": "#ff4081",
+    "theme": "solar-seer",
+    "bio": "Inspirada en Diotima de Mantinea. Su mirada intuitiva trasciende las sombras y conecta directamente con el Sol platónico.",
+    "equipment": "Prisma de Ideas y Alas de Resplandor",
+    "speedBonus": 1.02,
+    "magneticRadius": 3.5,
+    "perkDescription": "+50% puntos de bonificación en rachas de respuestas filosóficas correctas.",
+    "stats": {
+      "agilidad": 88,
+      "sabiduria": 98,
+      "intuicion": 96
+    },
+    "meshConfig": {
+      "suitColor": "#3d2745",
+      "trimColor": "#ffd700",
+      "visorColor": "#ff4081",
+      "skinColor": "#ffe0bd",
+      "hairColor": "#ffd54f"
+    }
+  }
+]
