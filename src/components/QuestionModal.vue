@@ -3,7 +3,7 @@
     <v-card class="question-modal-card text-white position-relative overflow-hidden" rounded="xl">
       <!-- Glow superior místico de la caja -->
       <div class="box-glow-header mb-5 text-center">
-        <div class="d-flex justify-center mb-3">
+        <div class="d-flex justify-center align-center flex-wrap gap-2 mb-3">
           <v-chip
             :color="levelColor"
             variant="flat"
@@ -13,13 +13,24 @@
             <v-icon icon="mdi-cube-outline" class="mr-2" size="20"></v-icon>
             CAJA MÍSTICA: NIVEL {{ question?.nivel || 'FÁCIL' }}
           </v-chip>
+
+          <!-- Cronómetro Activo en Vivo -->
+          <v-chip
+            color="amber-accent-2"
+            variant="outlined"
+            size="default"
+            class="live-timer-chip font-mono font-weight-black"
+          >
+            <v-icon icon="mdi-timer-sand" class="mr-1 pulse-clock" size="18"></v-icon>
+            ⏱️ {{ gameStore.formattedTime }}
+          </v-chip>
         </div>
 
         <h2 class="text-h4 font-weight-black text-glow-gold line-height-1 mb-2">
           DILEMA FILOSÓFICO
         </h2>
         <div class="header-desc text-body-2 text-grey-lighten-1">
-          La caja se ha fracturado. Responde correctamente para acelerar tu liberación.
+          La caja se ha fracturado. El cronómetro no se detiene: ¡responde rápido para tu posición en el ranking!
         </div>
       </div>
 
@@ -86,6 +97,9 @@
 
 <script setup>
 import { ref, computed } from "vue";
+import { useGameStore } from "../stores/gameStore";
+
+const gameStore = useGameStore();
 
 const props = defineProps({
   modelValue: Boolean,
@@ -152,6 +166,25 @@ const continueRace = () => {
   font-size: 0.8rem !important;
   letter-spacing: 0.8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.live-timer-chip {
+  background: rgba(255, 171, 0, 0.12) !important;
+  border: 1px solid rgba(255, 171, 0, 0.5) !important;
+  color: #ffd700 !important;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 14px rgba(255, 215, 0, 0.25);
+  padding: 6px 14px !important;
+}
+
+.pulse-clock {
+  animation: pulseClockAnim 1.2s infinite ease-in-out;
+}
+
+@keyframes pulseClockAnim {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; color: #ff5252; }
+  100% { transform: scale(1); opacity: 0.8; }
 }
 
 .header-desc {

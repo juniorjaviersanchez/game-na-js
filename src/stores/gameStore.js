@@ -11,6 +11,9 @@ export const GameState = {
   VICTORY: "VICTORY"
 };
 
+let questionTimerRaf = null;
+let lastQuestionTimestamp = 0;
+
 export const useGameStore = defineStore("game", {
   state: () => ({
     state: GameState.MENU,
@@ -57,6 +60,7 @@ export const useGameStore = defineStore("game", {
     },
 
     startRace() {
+      this.stopQuestionTimer();
       this.state = GameState.PLAYING;
       this.distance = 0;
       this.score = 0;
@@ -77,7 +81,7 @@ export const useGameStore = defineStore("game", {
     updateFrame(deltaSeconds) {
       if (this.state !== GameState.PLAYING) return;
 
-      // Actualizar tiempo transcurrido
+      // Actualizar tiempo transcurrido durante la carrera normal
       this.elapsedTime += deltaSeconds;
 
       // Calcular aceleración progresiva de 0m a 200m
@@ -95,7 +99,7 @@ export const useGameStore = defineStore("game", {
       // Modular música procedural ambiental
       soundManager.updateAmbientProgression(this.distance, this.targetDistance);
 
-      // Verificar meta (200 metros alcanzados)
+      // Verificar meta alcanzada
       if (this.distance >= this.targetDistance) {
         this.distance = this.targetDistance;
         this.triggerVictory();
@@ -124,9 +128,37 @@ export const useGameStore = defineStore("game", {
       this.lastBoxTriggerDistance = boxDistance;
       soundManager.playBoxShatter();
       soundManager.playQuestionReveal();
+      // El cronómetro NO se detiene: sigue corriendo para el ranking oficial
+      this.startQuestionTimer();
+    },
+
+    startQuestionTimer() {
+      this.stopQuestionTimer();
+      lastQuestionTimestamp = performance.now();
+      const tick = (now) => {
+        if (this.state !== GameState.PAUSED_QUESTION) {
+          questionTimerRaf = null;
+          return;
+        }
+        const deltaSeconds = (now - lastQuestionTimestamp) / 1000;
+        lastQuestionTimestamp = now;
+        if (deltaSeconds > 0 && deltaSeconds < 1.0) {
+          this.elapsedTime += deltaSeconds;
+        }
+        questionTimerRaf = requestAnimationFrame(tick);
+      };
+      questionTimerRaf = requestAnimationFrame(tick);
+    },
+
+    stopQuestionTimer() {
+      if (questionTimerRaf) {
+        cancelAnimationFrame(questionTimerRaf);
+        questionTimerRaf = null;
+      }
     },
 
     resumeAfterQuestion(isCorrect) {
+      this.stopQuestionTimer();
       if (isCorrect) {
         let points = gameConfig.correctQuestionScore;
         if (this.selectedCharacter.id === "lumina") {
@@ -152,16 +184,19 @@ export const useGameStore = defineStore("game", {
     },
 
     triggerVictory() {
+      this.stopQuestionTimer();
       this.state = GameState.VICTORY;
       soundManager.playVictory();
     },
 
     triggerGameOver() {
+      this.stopQuestionTimer();
       this.state = GameState.GAME_OVER;
       soundManager.stopAmbient();
     },
 
     returnToMenu() {
+      this.stopQuestionTimer();
       this.state = GameState.MENU;
       soundManager.stopAmbient();
     },
