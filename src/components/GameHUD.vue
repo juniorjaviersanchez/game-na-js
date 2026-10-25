@@ -1,57 +1,61 @@
 <template>
   <div class="game-hud-overlay fill-height d-flex flex-column justify-space-between pa-3 pa-md-5 pointer-events-none">
-    <!-- GRUPO SUPERIOR: ESTADÍSTICAS + SUB-BANNER DE ZONA PLATÓNICA (ARRIBA, SIN TAPAR EL JUEGO) -->
+    <!-- GRUPO SUPERIOR: ESTADÍSTICAS + SUB-BANNER DE ZONA PLATÓNICA -->
     <div class="top-hud-group d-flex flex-column align-center w-100">
       <!-- Fila Superior: Monedas, Multiplicador, Puntos, Distancia, Cronómetro y Pausa -->
-      <div class="d-flex align-center justify-space-between flex-wrap gap-2 w-100 pointer-events-auto">
-        <!-- Monedas / Chispas recolectadas -->
-        <div class="hud-pill d-flex align-center px-4 py-2 rounded-pill">
-          <div class="spark-coin-icon mr-2">
-            <v-icon icon="mdi-octagram" color="amber-accent-2" size="22"></v-icon>
-          </div>
-          <span class="text-h6 font-weight-black text-amber-accent-2 font-mono">
+      <div class="hud-top-bar d-flex align-center justify-space-between w-100 pointer-events-auto">
+        <!-- 1. Izquierda: Monedas / Chispas recolectadas con ancho estable y padding -->
+        <div class="hud-pill spark-pill d-flex align-center justify-center rounded-pill">
+          <v-icon icon="mdi-octagram" color="amber-accent-2" size="22" class="mr-2"></v-icon>
+          <span class="spark-count-text font-weight-black text-amber-accent-2 font-mono">
             {{ gameStore.sparksCollected }}
           </span>
         </div>
 
-        <!-- Centro: Multiplicador y Puntuación Total -->
-        <div class="d-flex align-center gap-2">
-          <div class="multiplier-badge px-3 py-1 rounded-pill">
+        <!-- 2. Centro: Multiplicador y Puntuación Total con anchos fijos y centrado perfecto -->
+        <div class="d-flex align-center gap-2 score-center-group">
+          <div class="multiplier-badge d-flex align-center justify-center rounded-pill">
             <span class="text-subtitle-1 font-weight-black text-glow-cyan text-primary">
               x{{ gameStore.multiplier }}
             </span>
           </div>
-          <div class="hud-pill score-pill px-5 py-2 rounded-pill">
-            <span class="text-h5 font-weight-black text-white font-mono letter-spacing-1">
+          <div class="hud-pill score-pill d-flex align-center justify-center rounded-pill">
+            <span class="score-number-text font-weight-black text-white font-mono">
               {{ Math.round(gameStore.score) }}
             </span>
           </div>
         </div>
 
-        <!-- Derecha: Distancia (metros), Cronómetro y Pausa -->
-        <div class="d-flex align-center gap-2">
-          <div class="hud-pill d-flex align-center px-4 py-2 rounded-pill">
+        <!-- 3. Derecha: Distancia (metros), Cronómetro y Pausa con anchos fijos y espaciado -->
+        <div class="d-flex align-center gap-3 right-hud-group">
+          <!-- Píldora de Distancia -->
+          <div class="hud-pill distance-pill d-flex align-center justify-center rounded-pill">
             <v-icon icon="mdi-map-marker-distance" color="primary" class="mr-2" size="20"></v-icon>
-            <span class="text-subtitle-1 font-weight-black text-primary font-mono mr-2">
+            <span class="distance-current text-primary font-weight-black font-mono">
               {{ Math.floor(gameStore.distance) }}m
             </span>
-            <span class="text-caption text-grey-lighten-1">/ {{ gameStore.targetDistance }}m</span>
+            <span class="distance-target text-grey-lighten-1 font-mono ml-1">
+              / {{ gameStore.targetDistance }}m
+            </span>
           </div>
 
-          <div class="hud-pill px-3 py-2 rounded-pill d-none d-sm-flex align-center">
-            <v-icon icon="mdi-timer-outline" color="grey-lighten-2" class="mr-1" size="18"></v-icon>
-            <span class="text-body-2 font-weight-bold font-mono text-grey-lighten-1">
+          <!-- Píldora de Cronómetro -->
+          <div class="hud-pill timer-pill d-none d-sm-flex align-center justify-center rounded-pill">
+            <v-icon icon="mdi-timer-outline" color="grey-lighten-2" class="mr-2" size="18"></v-icon>
+            <span class="timer-text font-weight-bold font-mono text-grey-lighten-1">
               {{ gameStore.formattedTime }}
             </span>
           </div>
 
+          <!-- Botón de Pausa -->
           <v-btn
             icon="mdi-pause"
             color="surface"
             variant="flat"
-            size="small"
+            size="default"
             rounded="circle"
-            class="hud-btn elevation-4"
+            class="hud-pause-btn elevation-4"
+            title="Pausar Juego"
             @click="$emit('pause-game')"
           ></v-btn>
         </div>
@@ -157,25 +161,116 @@ const gameStore = useGameStore();
 
 .top-hud-group {
   z-index: 25;
+  padding: 4px 10px;
 }
 
+.hud-top-bar {
+  padding: 0 4px;
+}
+
+/* Base de píldoras HUD con padding uniforme y desenfoque */
 .hud-pill {
-  background: rgba(14, 18, 36, 0.85);
-  border: 1px solid rgba(0, 229, 255, 0.25);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  background: rgba(14, 18, 36, 0.88);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.55);
 }
 
-.score-pill {
-  min-width: 110px;
-  text-align: center;
+/* 1. Píldora de Chispas (Izquierda) */
+.spark-pill {
+  min-width: 105px;
+  height: 42px;
+  padding: 0 16px;
+  user-select: none;
+}
+
+.spark-count-text {
+  font-size: 1.15rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+/* 2. Grupo Central: Multiplicador y Puntos */
+.score-center-group {
+  gap: 8px !important;
 }
 
 .multiplier-badge {
   background: linear-gradient(135deg, rgba(0, 229, 255, 0.3), rgba(224, 64, 251, 0.3));
   border: 1px solid #00e5ff;
+  min-width: 48px;
+  height: 42px;
+  padding: 0 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 229, 255, 0.25);
+  user-select: none;
 }
 
+.score-pill {
+  width: 145px;
+  min-width: 145px;
+  height: 42px;
+  padding: 0 18px;
+  text-align: center;
+  user-select: none;
+}
+
+.score-number-text {
+  font-size: 1.3rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+/* 3. Grupo Derecho: Distancia, Tiempo y Pausa */
+.right-hud-group {
+  gap: 12px !important;
+}
+
+.distance-pill {
+  min-width: 175px;
+  height: 42px;
+  padding: 0 16px;
+  user-select: none;
+}
+
+.distance-current {
+  font-size: 1.05rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.distance-target {
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.timer-pill {
+  min-width: 115px;
+  height: 42px;
+  padding: 0 14px;
+  user-select: none;
+}
+
+.timer-text {
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.hud-pause-btn {
+  width: 42px !important;
+  height: 42px !important;
+  min-width: 42px !important;
+  transition: transform 0.2s ease;
+}
+
+.hud-pause-btn:hover {
+  transform: scale(1.08);
+}
+
+/* Sub-banner de Zona */
 .zone-header-container {
   opacity: 0.92;
   transition: opacity 0.3s ease;
@@ -185,7 +280,7 @@ const gameStore = useGameStore();
   background: rgba(10, 14, 30, 0.88);
   border: 1px solid rgba(0, 229, 255, 0.3);
   backdrop-filter: blur(8px);
-  padding: 3px 14px;
+  padding: 4px 16px;
 }
 
 .zone-subtitle {
