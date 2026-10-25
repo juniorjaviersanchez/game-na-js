@@ -161,17 +161,26 @@ watch(
 
 <style scoped>
 .stats-card {
-  background: rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(255, 215, 0, 0.25);
+  background: rgba(14, 12, 6, 0.75);
+  border: 1px solid rgba(255, 215, 0, 0.35);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 .stat-box {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.stat-box:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 215, 0, 0.35);
+  transform: translateY(-1px);
 }
 
 .rank-award-box {
-  background: linear-gradient(90deg, rgba(255, 215, 0, 0.15), rgba(255, 171, 0, 0.25));
+  background: linear-gradient(90deg, rgba(255, 215, 0, 0.18), rgba(255, 171, 0, 0.28));
   border: 1px solid #ffd700;
+  box-shadow: 0 4px 18px rgba(255, 215, 0, 0.2);
 }
 </style>
