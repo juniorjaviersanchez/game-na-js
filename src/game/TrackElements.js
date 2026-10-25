@@ -8,6 +8,7 @@ export class CollectibleSpark {
     this.collected = false;
     this.time = Math.random() * 10;
     this.baseY = y;
+    this.baseX = x; // Guardar posición X original del carril
 
     // Geometría octaédrica brillante (joya filosófica)
     const geo = new THREE.OctahedronGeometry(0.32, 0);
@@ -39,10 +40,16 @@ export class CollectibleSpark {
     this.ring.rotation.y = this.time * 1.5;
     this.group.position.y = this.baseY + Math.sin(this.time * 4) * 0.12;
 
-    // Efecto magnético hacia el jugador
-    const dist = this.group.position.distanceTo(playerPos);
-    if (dist < magnetRadius) {
-      this.group.position.lerp(playerPos, dt * 10.0);
+    // Efecto magnético: ÚNICAMENTE si el jugador está corriendo en el MISMO carril
+    const laneDiff = Math.abs(this.baseX - playerPos.x);
+    if (laneDiff < 0.9) {
+      const dist = this.group.position.distanceTo(playerPos);
+      if (dist < magnetRadius) {
+        this.group.position.lerp(playerPos, dt * 10.0);
+      }
+    } else {
+      // Bloquear en su carril original para que no salte a otros carriles
+      this.group.position.x = this.baseX;
     }
   }
 

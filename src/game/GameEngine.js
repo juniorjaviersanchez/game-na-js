@@ -454,8 +454,11 @@ export class GameEngine {
       if (!spark.collected && Math.abs(spark.group.position.z - this.playerZ) < 30) {
         spark.update(dt, playerPos, magnetRadius);
 
-        // Colisión / Recolección
-        if (spark.group.position.distanceTo(playerPos) < 1.35) {
+        // Colisión / Recolección: ÚNICAMENTE si el jugador está en el MISMO carril
+        const sparkLaneX = spark.baseX !== undefined ? spark.baseX : spark.group.position.x;
+        const laneDiff = Math.abs(sparkLaneX - this.playerX);
+
+        if (laneDiff < 0.9 && spark.group.position.distanceTo(playerPos) < 1.35) {
           spark.collected = true;
           spark.group.visible = false;
           this.onSparkCollect();
