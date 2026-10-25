@@ -29,24 +29,21 @@
       </div>
 
       <!-- Alternativas de Respuesta (4 Opciones) -->
-      <div class="alternatives-grid d-flex flex-column gap-2 mb-4">
-        <v-btn
+      <div class="alternatives-grid d-flex flex-column mb-4">
+        <button
           v-for="(alt, idx) in question?.alternativas"
           :key="idx"
-          block
-          size="large"
-          variant="outlined"
-          :color="getOptionColor(idx)"
-          class="alternative-btn text-none justify-start px-4 py-3 rounded-lg"
+          type="button"
+          class="alternative-choice-btn mb-2 d-flex align-center"
           :class="getOptionClass(idx)"
           :disabled="isAnswered"
           @click="selectOption(idx)"
         >
           <span class="option-letter mr-3">{{ ['A', 'B', 'C', 'D'][idx] }}</span>
-          <span class="text-body-1 font-weight-medium text-left flex-grow-1">{{ alt }}</span>
-          <v-icon v-if="isAnswered && idx === question.correcta" icon="mdi-check-circle" color="success" size="24"></v-icon>
-          <v-icon v-else-if="isAnswered && idx === selectedOptionIndex && !isCorrect" icon="mdi-close-circle" color="error" size="24"></v-icon>
-        </v-btn>
+          <span class="text-body-1 font-weight-medium text-left flex-grow-1 option-text">{{ alt }}</span>
+          <v-icon v-if="isAnswered && idx === question.correcta" icon="mdi-check-circle" color="success" size="24" class="ml-2"></v-icon>
+          <v-icon v-else-if="isAnswered && idx === selectedOptionIndex && !isCorrect" icon="mdi-close-circle" color="error" size="24" class="ml-2"></v-icon>
+        </button>
       </div>
 
       <!-- Retroalimentación y Explicación Pedagógica -->
@@ -149,15 +146,31 @@ const continueRace = () => {
   border: 1px solid rgba(0, 229, 255, 0.2);
 }
 
-.alternative-btn {
-  background: rgba(255, 255, 255, 0.04) !important;
-  border-width: 1.5px !important;
-  transition: all 0.2s ease !important;
+.alternative-choice-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(0, 229, 255, 0.3);
+  padding: 12px 18px;
+  border-radius: 10px;
+  width: 100%;
+  cursor: pointer;
+  color: #ffffff;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
 }
 
-.alternative-btn:hover:not(:disabled) {
-  background: rgba(0, 229, 255, 0.12) !important;
+.alternative-choice-btn:hover:not(:disabled) {
+  background: rgba(0, 229, 255, 0.15);
+  border-color: #00e5ff;
   transform: translateX(4px);
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.3);
+}
+
+.alternative-choice-btn:disabled {
+  cursor: default;
+}
+
+.option-text {
+  line-height: 1.35;
 }
 
 .option-letter {
