@@ -236,23 +236,71 @@ export class GameEngine {
   populateTrackItems() {
     const lanes = [-this.options.laneWidth, 0, this.options.laneWidth];
 
-    // Colocamos chispas y obstáculos a lo largo de la pista evitando las cajas (cada 100m)
-    for (let z = 6; z < this.options.targetDistance; z += 5) {
-      // Evitar colocar obstáculos o monedas en un radio de 4m alrededor de las cajas
+    // Colocamos chispas y obstáculos a lo largo de la pista con dificultad progresiva
+    for (let z = 18; z < this.options.targetDistance; z += 5) {
+      // Mantener libre de obstáculos y chispas un radio de 5m alrededor de las cajas de preguntas
       const distInInterval = z % this.options.boxInterval;
-      const nearBox = distInInterval < 4.0 || distInInterval > (this.options.boxInterval - 4.0);
+      const nearBox = distInInterval < 5.0 || distInInterval > (this.options.boxInterval - 5.0);
       if (nearBox) continue;
 
-      const randomLane = lanes[Math.floor(Math.random() * lanes.length)];
+      // Curva de dificultad progresiva (0 a 1000m)
+      let obstacleInterval = 28; // Fase 1: cada 28m aprox.
+      let doubleObstacleChance = 0.0; // 1 solo obstáculo por sección
 
-      if (z % 10 === 0) {
-        // Obstáculo: alternamos vallas bajas para saltar y monolitos altos
-        const isHurdle = Math.random() > 0.4;
-        const obstacle = new TrackObstacle(isHurdle ? "hurdle" : "monolith", randomLane, -z);
-        this.obstacles.push(obstacle);
-        this.scene.add(obstacle.group);
+      if (z >= 750) {
+        obstacleInterval = 12; // Fase 4 (750 - 1000m): cada 12m
+        doubleObstacleChance = 0.50;
+      } else if (z >= 500) {
+        obstacleInterval = 16; // Fase 3 (500 - 750m): cada 16m
+        doubleObstacleChance = 0.35;
+      } else if (z >= 250) {
+        obstacleInterval = 22; // Fase 2 (250 - 500m): cada 22m
+        doubleObstacleChance = 0.20;
+      }
+
+      const isObstaclePoint = (z % obstacleInterval) < 5;
+
+      if (isObstaclePoint) {
+        // Generar obstáculos temáticos (1 o 2 carriles ocupados, NUNCA los 3)
+        const shuffledLanes = [...lanes].sort(() => Math.random() - 0.5);
+        const numObstacles = Math.random() < doubleObstacleChance ? 2 : 1;
+
+        for (let i = 0; i < numObstacles; i++) {
+          const targetLane = shuffledLanes[i];
+          let chosenType = "chains";
+
+          if (z < 250) {
+            // Zona 1: Fondo de la Caverna (predominan Cadenas para saltar y Monolitos de roca)
+            chosenType = Math.random() > 0.4 ? "chains" : "monolith";
+          } else if (z < 500) {
+            // Zona 2: Fuego de las Ilusiones (Brasas y Sombras Espectrales)
+            const types = ["chains", "embers", "shadow", "monolith"];
+            chosenType = types[Math.floor(Math.random() * types.length)];
+          } else if (z < 750) {
+            // Zona 3: Subida Escarpada (Combinación de los 4 tipos)
+            const types = ["shadow", "embers", "monolith", "chains"];
+            chosenType = types[Math.floor(Math.random() * types.length)];
+          } else {
+            // Zona 4: Camino Solar (Máxima intensidad hacia la Verdad)
+            const types = ["shadow", "monolith", "embers", "chains"];
+            chosenType = types[Math.floor(Math.random() * types.length)];
+          }
+
+          const obstacle = new TrackObstacle(chosenType, targetLane, -z);
+          this.obstacles.push(obstacle);
+          this.scene.add(obstacle.group);
+        }
+
+        // En el carril libre restante, colocar una chispa dorada guiando el camino
+        const safeLane = shuffledLanes[numObstacles];
+        if (safeLane !== undefined) {
+          const spark = new CollectibleSpark(safeLane, 0.8, -z);
+          this.collectibles.push(spark);
+          this.scene.add(spark.group);
+        }
       } else {
-        // Chispa de sabiduría coleccionable
+        // Puntos intermedios: chispas coleccionables
+        const randomLane = lanes[Math.floor(Math.random() * lanes.length)];
         const spark = new CollectibleSpark(randomLane, 0.8, -z);
         this.collectibles.push(spark);
         this.scene.add(spark.group);
@@ -466,21 +514,28 @@ export class GameEngine {
       }
     });
 
-    // 8. Detección de Obstáculos
+    // 8. Detección de Obstáculos (Impacto y Derrota Inmediata)
     this.obstacles.forEach((obs) => {
-      if (!obs.hit && Math.abs(obs.group.position.z - this.playerZ) < 1.2) {
-        const laneDiff = Math.abs(obs.group.position.x - this.playerX);
-        if (laneDiff < 1.0) {
-          if (obs.type === "hurdle") {
-            // Si salta suficientemente alto, no se tropieza
-            if (this.playerY < obs.height) {
+      // Animar componentes de los obstáculos cercanos
+      if (Math.abs(obs.group.position.z - this.playerZ) < 60) {
+        obs.update(dt);
+      }
+
+      if (!obs.hit && Math.abs(obs.group.position.z - this.playerZ) < 1.1) {
+        const laneDiff = Math.abs(obs.laneX - this.playerX);
+        if (laneDiff < 0.9) {
+          if (obs.isJumpable) {
+            // Obstáculo bajo (cadenas, brasas): Si el jugador no salta a tiempo, choca y pierde
+            if (this.playerY < obs.jumpClearanceHeight) {
               obs.hit = true;
-              this.onObstacleHit();
+              this.pause();
+              this.onObstacleHit(obs);
             }
           } else {
-            // Monolito: no se puede saltar
+            // Obstáculo alto (sombras, monolito): Insuperable con salto, colisión directa y pierde
             obs.hit = true;
-            this.onObstacleHit();
+            this.pause();
+            this.onObstacleHit(obs);
           }
         }
       }

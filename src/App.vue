@@ -53,6 +53,7 @@
       <!-- Modal de Derrota / Reinicio -->
       <GameOverModal
         v-model="showGameOverModal"
+        :obstacle="lastObstacleHit"
         @restart="handleStartGame"
         @go-menu="handleReturnToMenu"
       />
@@ -106,6 +107,7 @@ const showLeaderboardModal = ref(false);
 const showConfigModal = ref(false);
 
 const activeQuestion = ref(null);
+const lastObstacleHit = ref(null);
 
 onMounted(() => {
   // Cargar perfil de usuario y ranking desde localStorage
@@ -128,6 +130,22 @@ const onUserLogged = (user) => {
   if (user && user.preferredCharacter) {
     gameStore.selectCharacterById(user.preferredCharacter);
   }
+};
+
+const handleObstacleCollision = (obs) => {
+  lastObstacleHit.value = obs;
+  soundManager.playHit();
+  gameStore.triggerGameOver();
+
+  // Guardar resultado del intento en el perfil del usuario
+  userStore.recordGameResult({
+    completed: false,
+    time: gameStore.elapsedTime,
+    score: gameStore.score,
+    characterId: gameStore.selectedCharacter.id
+  });
+
+  showGameOverModal.value = true;
 };
 
 const initGameEngine = async () => {
@@ -157,8 +175,8 @@ const initGameEngine = async () => {
     onSparkCollect: () => {
       gameStore.collectSpark();
     },
-    onObstacleHit: () => {
-      gameStore.hitObstacle();
+    onObstacleHit: (obs) => {
+      handleObstacleCollision(obs);
     },
     onVictoryReached: () => {
       handleVictoryReached();
@@ -172,6 +190,7 @@ const handleStartGame = async () => {
   soundManager.unlock();
   showVictoryModal.value = false;
   showGameOverModal.value = false;
+  lastObstacleHit.value = null;
 
   gameStore.startRace();
   questionStore.resetSession();

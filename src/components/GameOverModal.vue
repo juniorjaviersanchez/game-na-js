@@ -10,9 +10,17 @@
       <h2 class="text-h5 font-weight-black text-red-accent-2 mb-1">
         DESPERTAR INTERRUMPIDO
       </h2>
-      <p class="text-body-2 text-grey-lighten-2 mb-4">
+      <p class="text-body-2 text-grey-lighten-2 mb-3">
         Las sombras y cadenas te han alcanzado temporalmente. Los filósofos no temen caer, sino no levantarse.
       </p>
+
+      <!-- Detalle del obstáculo impactado -->
+      <div v-if="obstacle" class="obstacle-alert-badge pa-2 rounded-lg mb-3 d-flex align-center justify-center">
+        <v-icon icon="mdi-alert-octagon" color="amber-accent-2" size="20" class="mr-2"></v-icon>
+        <span class="text-caption font-weight-bold text-amber-accent-2">
+          Causa de derrota: {{ obstacle.name }}
+        </span>
+      </div>
 
       <div class="stats-box pa-4 rounded-xl mb-4 bg-black-opacity">
         <div class="d-flex justify-space-between mb-2">
@@ -64,7 +72,8 @@ import { computed } from "vue";
 import { useGameStore } from "../stores/gameStore";
 
 const props = defineProps({
-  modelValue: Boolean
+  modelValue: Boolean,
+  obstacle: Object
 });
 const emit = defineEmits(["update:modelValue", "restart", "go-menu"]);
 
@@ -80,5 +89,10 @@ const isOpen = computed({
 .bg-black-opacity {
   background: rgba(0, 0, 0, 0.45);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.obstacle-alert-badge {
+  background: rgba(255, 171, 0, 0.15);
+  border: 1px solid rgba(255, 171, 0, 0.4);
 }
 </style>
