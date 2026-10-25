@@ -1,24 +1,26 @@
 <template>
-  <div class="game-hud-overlay fill-height d-flex flex-column justify-space-between pa-3 pa-md-5 pointer-events-none">
-    <!-- GRUPO SUPERIOR: ESTADÍSTICAS + SUB-BANNER DE ZONA PLATÓNICA -->
-    <div class="top-hud-group d-flex flex-column align-center w-100">
-      <!-- Fila Superior: Monedas, Multiplicador, Puntos, Distancia, Cronómetro y Pausa -->
-      <div class="hud-top-bar d-flex align-center justify-space-between w-100 pointer-events-auto">
-        <!-- 1. Izquierda: Monedas / Chispas recolectadas con ancho estable y padding -->
-        <div class="hud-pill spark-pill d-flex align-center justify-center rounded-pill">
-          <v-icon icon="mdi-octagram" color="amber-accent-2" size="22" class="mr-2"></v-icon>
-          <span class="spark-count-text font-weight-black text-amber-accent-2 font-mono">
-            {{ gameStore.sparksCollected }}
-          </span>
-        </div>
+  <div class="game-hud-overlay fill-height d-flex flex-column justify-space-between pa-3 pa-md-4 pointer-events-none">
+    <!-- GRUPO SUPERIOR: BARRA PRINCIPAL + ZONA PERFECTAMENTE CENTRADA -->
+    <div class="top-hud-group w-100 position-relative pointer-events-none">
+      <div class="hud-top-bar d-flex align-start justify-space-between w-100 pointer-events-auto">
+        <!-- 1. LADO IZQUIERDO: Monedas + Multiplicador + Puntuación (todos juntos) -->
+        <div class="d-flex align-center gap-2 left-hud-group">
+          <!-- Monedas / Chispas recolectadas -->
+          <div class="hud-pill spark-pill d-flex align-center justify-center rounded-pill">
+            <v-icon icon="mdi-octagram" color="amber-accent-2" size="20" class="mr-2"></v-icon>
+            <span class="spark-count-text font-weight-black text-amber-accent-2 font-mono">
+              {{ gameStore.sparksCollected }}
+            </span>
+          </div>
 
-        <!-- 2. Centro: Multiplicador y Puntuación Total con anchos fijos y centrado perfecto -->
-        <div class="d-flex align-center gap-2 score-center-group">
+          <!-- Multiplicador (x1, x2...) -->
           <div class="multiplier-badge d-flex align-center justify-center rounded-pill">
-            <span class="text-subtitle-1 font-weight-black text-glow-cyan text-primary">
+            <span class="multiplier-text font-weight-black text-glow-cyan text-primary font-mono">
               x{{ gameStore.multiplier }}
             </span>
           </div>
+
+          <!-- Puntuación Total con ancho fijo y centrado -->
           <div class="hud-pill score-pill d-flex align-center justify-center rounded-pill">
             <span class="score-number-text font-weight-black text-white font-mono">
               {{ Math.round(gameStore.score) }}
@@ -26,8 +28,32 @@
           </div>
         </div>
 
-        <!-- 3. Derecha: Distancia (metros), Cronómetro y Pausa con anchos fijos y espaciado -->
-        <div class="d-flex align-center gap-3 right-hud-group">
+        <!-- 2. CENTRO EXACTO: Zona Platónica y Progreso (Absoluto al 50% de la pantalla) -->
+        <div class="hud-center-zone d-flex flex-column align-center pointer-events-none">
+          <div class="zone-pill px-4 py-1 rounded-pill d-flex align-center elevation-4">
+            <v-icon icon="mdi-eye-circle" size="16" color="primary" class="mr-2"></v-icon>
+            <span class="text-caption font-weight-black text-uppercase text-glow-cyan zone-title">
+              {{ gameStore.currentZone.name }}
+            </span>
+          </div>
+          <div class="text-caption text-grey-lighten-2 text-center mt-1 zone-subtitle text-shadow">
+            {{ gameStore.currentZone.subtitle }}
+          </div>
+
+          <!-- Barra de progreso general a meta (1000m) -->
+          <div class="progress-bar-container mt-1">
+            <v-progress-linear
+              :model-value="gameStore.progressPercent"
+              color="primary"
+              bg-color="rgba(255,255,255,0.2)"
+              height="5"
+              rounded
+            ></v-progress-linear>
+          </div>
+        </div>
+
+        <!-- 3. LADO DERECHO: Distancia (metros), Cronómetro y Pausa -->
+        <div class="d-flex align-center gap-2 right-hud-group">
           <!-- Píldora de Distancia -->
           <div class="hud-pill distance-pill d-flex align-center justify-center rounded-pill">
             <v-icon icon="mdi-map-marker-distance" color="primary" class="mr-2" size="20"></v-icon>
@@ -58,30 +84,6 @@
             title="Pausar Juego"
             @click="$emit('pause-game')"
           ></v-btn>
-        </div>
-      </div>
-
-      <!-- Fila Sub-Banner: Zona Platónica y Progreso (anclado arriba, despejando la pista 3D) -->
-      <div class="zone-header-container d-flex flex-column align-center mt-2 pointer-events-none">
-        <div class="zone-pill px-4 py-1 rounded-pill d-flex align-center elevation-4">
-          <v-icon icon="mdi-eye-circle" size="16" color="primary" class="mr-2"></v-icon>
-          <span class="text-caption font-weight-black text-uppercase text-glow-cyan">
-            {{ gameStore.currentZone.name }}
-          </span>
-        </div>
-        <div class="text-caption text-grey-lighten-2 text-center mt-1 zone-subtitle text-shadow">
-          {{ gameStore.currentZone.subtitle }}
-        </div>
-
-        <!-- Barra de progreso general a meta (1000m) -->
-        <div class="progress-bar-container mt-1">
-          <v-progress-linear
-            :model-value="gameStore.progressPercent"
-            color="primary"
-            bg-color="rgba(255,255,255,0.2)"
-            height="5"
-            rounded
-          ></v-progress-linear>
         </div>
       </div>
     </div>
@@ -161,10 +163,13 @@ const gameStore = useGameStore();
 
 .top-hud-group {
   z-index: 25;
-  padding: 4px 10px;
+  padding: 4px 6px;
+  position: relative;
 }
 
 .hud-top-bar {
+  position: relative;
+  width: 100%;
   padding: 0 4px;
 }
 
@@ -177,11 +182,16 @@ const gameStore = useGameStore();
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.55);
 }
 
-/* 1. Píldora de Chispas (Izquierda) */
+/* 1. Lado Izquierdo: Monedas + Multiplicador + Puntuación */
+.left-hud-group {
+  gap: 8px !important;
+  z-index: 28;
+}
+
 .spark-pill {
-  min-width: 105px;
+  min-width: 95px;
   height: 42px;
-  padding: 0 16px;
+  padding: 0 14px;
   user-select: none;
 }
 
@@ -191,70 +201,104 @@ const gameStore = useGameStore();
   line-height: 1;
 }
 
-/* 2. Grupo Central: Multiplicador y Puntos */
-.score-center-group {
-  gap: 8px !important;
-}
-
 .multiplier-badge {
   background: linear-gradient(135deg, rgba(0, 229, 255, 0.3), rgba(224, 64, 251, 0.3));
   border: 1px solid #00e5ff;
   min-width: 48px;
   height: 42px;
-  padding: 0 12px;
+  padding: 0 10px;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 15px rgba(0, 229, 255, 0.25);
   user-select: none;
 }
 
+.multiplier-text {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
 .score-pill {
-  width: 145px;
-  min-width: 145px;
+  width: 130px;
+  min-width: 130px;
   height: 42px;
-  padding: 0 18px;
+  padding: 0 16px;
   text-align: center;
   user-select: none;
 }
 
 .score-number-text {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-variant-numeric: tabular-nums;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   line-height: 1;
 }
 
-/* 3. Grupo Derecho: Distancia, Tiempo y Pausa */
+/* 2. Centro Matemático Exacto (50% de la pantalla) */
+.hud-center-zone {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  z-index: 26;
+  opacity: 0.95;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.zone-pill {
+  background: rgba(10, 14, 30, 0.9);
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  backdrop-filter: blur(10px);
+  padding: 4px 18px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.zone-title {
+  letter-spacing: 0.6px;
+}
+
+.zone-subtitle {
+  font-size: 0.72rem !important;
+  color: #b0bec5 !important;
+}
+
+.progress-bar-container {
+  width: 180px;
+}
+
+/* 3. Lado Derecho: Distancia, Tiempo y Pausa */
 .right-hud-group {
-  gap: 12px !important;
+  gap: 10px !important;
+  z-index: 28;
 }
 
 .distance-pill {
-  min-width: 175px;
-  height: 42px;
-  padding: 0 16px;
-  user-select: none;
-}
-
-.distance-current {
-  font-size: 1.05rem;
-  font-variant-numeric: tabular-nums;
-  line-height: 1;
-}
-
-.distance-target {
-  font-size: 0.85rem;
-  line-height: 1;
-}
-
-.timer-pill {
-  min-width: 115px;
+  min-width: 170px;
   height: 42px;
   padding: 0 14px;
   user-select: none;
 }
 
+.distance-current {
+  font-size: 1.02rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.distance-target {
+  font-size: 0.82rem;
+  line-height: 1;
+}
+
+.timer-pill {
+  min-width: 110px;
+  height: 42px;
+  padding: 0 12px;
+  user-select: none;
+}
+
 .timer-text {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-variant-numeric: tabular-nums;
   line-height: 1;
 }
@@ -268,28 +312,6 @@ const gameStore = useGameStore();
 
 .hud-pause-btn:hover {
   transform: scale(1.08);
-}
-
-/* Sub-banner de Zona */
-.zone-header-container {
-  opacity: 0.92;
-  transition: opacity 0.3s ease;
-}
-
-.zone-pill {
-  background: rgba(10, 14, 30, 0.88);
-  border: 1px solid rgba(0, 229, 255, 0.3);
-  backdrop-filter: blur(8px);
-  padding: 4px 16px;
-}
-
-.zone-subtitle {
-  font-size: 0.72rem !important;
-  color: #b0bec5 !important;
-}
-
-.progress-bar-container {
-  width: 180px;
 }
 
 .text-shadow {
