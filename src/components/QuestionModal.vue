@@ -1,31 +1,33 @@
 <template>
   <v-dialog v-model="isOpen" max-width="680" persistent>
     <v-card class="question-modal-card text-white position-relative overflow-hidden" rounded="xl">
-      <!-- Glow superior místico de la caja -->
+      <!-- Barra superior: Caja Mística a la izquierda y Cronómetro a la derecha -->
+      <div class="modal-top-bar d-flex align-center justify-space-between w-100 mb-4">
+        <!-- Esquina Izquierda: Nivel de la Caja Mística -->
+        <v-chip
+          :color="levelColor"
+          variant="flat"
+          size="default"
+          class="level-chip font-weight-black text-uppercase"
+        >
+          <v-icon icon="mdi-cube-outline" class="mr-2" size="20"></v-icon>
+          CAJA MÍSTICA: NIVEL {{ question?.nivel || 'FÁCIL' }}
+        </v-chip>
+
+        <!-- Esquina Derecha: Cronómetro Activo en Vivo -->
+        <v-chip
+          color="amber-accent-2"
+          variant="outlined"
+          size="default"
+          class="live-timer-chip font-mono font-weight-black"
+        >
+          <v-icon icon="mdi-timer-sand" class="mr-1 pulse-clock" size="18"></v-icon>
+          ⏱️ {{ gameStore.formattedTime }}
+        </v-chip>
+      </div>
+
+      <!-- Título y Subtítulo centrados -->
       <div class="box-glow-header mb-5 text-center">
-        <div class="d-flex justify-center align-center flex-wrap gap-2 mb-3">
-          <v-chip
-            :color="levelColor"
-            variant="flat"
-            size="default"
-            class="level-chip font-weight-black text-uppercase"
-          >
-            <v-icon icon="mdi-cube-outline" class="mr-2" size="20"></v-icon>
-            CAJA MÍSTICA: NIVEL {{ question?.nivel || 'FÁCIL' }}
-          </v-chip>
-
-          <!-- Cronómetro Activo en Vivo -->
-          <v-chip
-            color="amber-accent-2"
-            variant="outlined"
-            size="default"
-            class="live-timer-chip font-mono font-weight-black"
-          >
-            <v-icon icon="mdi-timer-sand" class="mr-1 pulse-clock" size="18"></v-icon>
-            ⏱️ {{ gameStore.formattedTime }}
-          </v-chip>
-        </div>
-
         <h2 class="text-h4 font-weight-black text-glow-gold line-height-1 mb-2">
           DILEMA FILOSÓFICO
         </h2>
