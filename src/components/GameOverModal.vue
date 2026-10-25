@@ -1,6 +1,6 @@
 <template>
   <v-dialog v-model="isOpen" max-width="540" persistent>
-    <v-card class="game-over-panel text-white pa-6 pa-sm-8 text-center position-relative overflow-hidden" rounded="xl">
+    <v-card class="game-over-panel text-white text-center position-relative overflow-hidden" rounded="xl">
       <!-- Glow superior de ambientación -->
       <div class="ambient-glow"></div>
 
@@ -123,11 +123,18 @@ const isOpen = computed({
 
 <style scoped>
 .game-over-panel {
+  padding: 38px 48px !important;
   background: linear-gradient(160deg, rgba(26, 18, 32, 0.96) 0%, rgba(14, 12, 22, 0.98) 100%) !important;
   backdrop-filter: blur(18px) !important;
   -webkit-backdrop-filter: blur(18px) !important;
   border: 1px solid rgba(255, 82, 82, 0.35) !important;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), 0 0 35px rgba(255, 82, 82, 0.2) !important;
+}
+
+@media (max-width: 600px) {
+  .game-over-panel {
+    padding: 28px 20px !important;
+  }
 }
 
 .ambient-glow {

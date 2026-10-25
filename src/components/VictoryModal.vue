@@ -1,6 +1,6 @@
 <template>
   <v-dialog v-model="isOpen" max-width="580" persistent>
-    <v-card class="glass-panel-gold pa-6 pa-md-8 text-white text-center position-relative overflow-hidden" rounded="xl">
+    <v-card class="victory-modal-card glass-panel-gold text-white text-center position-relative overflow-hidden" rounded="xl">
       <!-- Icono de Victoria Solar -->
       <div class="mb-3">
         <v-avatar color="amber" size="84" class="elevation-12 pulse-anim">
@@ -160,6 +160,16 @@ watch(
 </script>
 
 <style scoped>
+.victory-modal-card {
+  padding: 38px 48px !important;
+}
+
+@media (max-width: 600px) {
+  .victory-modal-card {
+    padding: 28px 20px !important;
+  }
+}
+
 .stats-card {
   background: rgba(14, 12, 6, 0.75);
   border: 1px solid rgba(255, 215, 0, 0.35);
