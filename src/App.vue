@@ -63,9 +63,17 @@
         v-model="showLeaderboardModal"
       />
 
-      <!-- Modal de Configuración y Parametrización -->
+      <!-- Modal de Configuración y Parametrización (desde Menú) -->
       <ConfigModal
         v-model="showConfigModal"
+      />
+
+      <!-- Modal de Pausa en Partida (Continuar, Volver a Jugar, Selección de Personaje) -->
+      <PauseModal
+        v-model="showPauseModal"
+        @resume="handleResumeGame"
+        @restart="handleRestartFromPause"
+        @go-menu="handleGoMenuFromPause"
       />
     </v-main>
   </v-app>
@@ -89,6 +97,7 @@ import VictoryModal from "./components/VictoryModal.vue";
 import GameOverModal from "./components/GameOverModal.vue";
 import LeaderboardModal from "./components/LeaderboardModal.vue";
 import ConfigModal from "./components/ConfigModal.vue";
+import PauseModal from "./components/PauseModal.vue";
 
 const gameStore = useGameStore();
 const userStore = useUserStore();
@@ -105,6 +114,7 @@ const showVictoryModal = ref(false);
 const showGameOverModal = ref(false);
 const showLeaderboardModal = ref(false);
 const showConfigModal = ref(false);
+const showPauseModal = ref(false);
 
 const activeQuestion = ref(null);
 const lastObstacleHit = ref(null);
@@ -118,9 +128,13 @@ onMounted(() => {
   if (!userStore.currentUser) {
     showLoginModal.value = true;
   }
+
+  // Listener global para la tecla Esc (solo durante la partida activa)
+  window.addEventListener("keydown", handleGlobalKeyDown);
 });
 
 onUnmounted(() => {
+  window.removeEventListener("keydown", handleGlobalKeyDown);
   if (gameEngineInstance) {
     gameEngineInstance.dispose();
   }
@@ -190,6 +204,7 @@ const handleStartGame = async () => {
   soundManager.unlock();
   showVictoryModal.value = false;
   showGameOverModal.value = false;
+  showPauseModal.value = false;
   lastObstacleHit.value = null;
 
   gameStore.startRace();
@@ -213,11 +228,48 @@ const handleJump = () => {
   }
 };
 
+// Control de la tecla Esc (solo activo durante la carrera en vivo)
+const handleGlobalKeyDown = (e) => {
+  if (e.code === "Escape") {
+    if (showPauseModal.value) {
+      handleResumeGame();
+      return;
+    }
+
+    // La tecla Esc solo funciona cuando está jugando
+    if (
+      gameStore.state === GameState.PLAYING &&
+      !showQuestionModal.value &&
+      !showGameOverModal.value &&
+      !showVictoryModal.value
+    ) {
+      handlePauseGame();
+    }
+  }
+};
+
 const handlePauseGame = () => {
   if (gameEngineInstance) {
     gameEngineInstance.pause();
-    showConfigModal.value = true;
+    showPauseModal.value = true;
   }
+};
+
+const handleResumeGame = () => {
+  showPauseModal.value = false;
+  if (gameEngineInstance) {
+    gameEngineInstance.resume();
+  }
+};
+
+const handleRestartFromPause = () => {
+  showPauseModal.value = false;
+  handleStartGame();
+};
+
+const handleGoMenuFromPause = () => {
+  showPauseModal.value = false;
+  handleReturnToMenu();
 };
 
 const onAnswerSubmitted = ({ isCorrect, selectedIndex }) => {
@@ -257,6 +309,7 @@ const handleVictoryReached = () => {
 const handleReturnToMenu = () => {
   showVictoryModal.value = false;
   showGameOverModal.value = false;
+  showPauseModal.value = false;
   gameStore.returnToMenu();
   if (gameEngineInstance) {
     gameEngineInstance.stop();
